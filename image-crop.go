@@ -26,6 +26,7 @@ import "encoding/base64"
 import "fmt"
 import "image"
 import "image/png"
+import _ "image/jpeg"
 import "io"
 import "io/ioutil"
 
@@ -34,7 +35,7 @@ import "io/ioutil"
 import "github.com/anthonynsimon/bild/transform"
 
 // Declaring some const variables
-const imagePath = "/home/a/Documents/GitHub/go-example/image-600x600.png"
+const imagePath = "/home/a/Documents/GitHub/go-example/image-600x600.jpg"
 const imageTmpDir = ""              // OS default, e.g. /tmp
 const imageTmpPattern = "crop-tmp-" // start of temp file
 const x0 = 50                       // sample coordinates
@@ -117,6 +118,10 @@ func main() {
 				// use the coordinates received by server via REST API
 				cropRect := image.Rect(x0, y0, x1, y1) // image.Rect(x0, y0, x1, y1)
 				imageCropped := transform.Crop(imageData, cropRect)
+
+				// Resize
+				imageCropped = transform.Resize(imageCropped, 256, 256, transform.Linear)
+
 				var b bytes.Buffer
 				w := io.Writer(&b) // create a byte[] io.Writer using buffer
 				// Encode takes a writer interface and an image interface
