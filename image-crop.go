@@ -39,7 +39,7 @@ const imageTmpDir = ""              // OS default, e.g. /tmp
 const imageTmpPattern = "crop-tmp-" // start of temp file
 const x0 = 50                       // sample coordinates
 const y0 = 50                       // sample coordinates
-const x1 = 550
+const x1 = 550                      // sample coordinates
 const y1 = 550
 
 // ReadFile is only used for testing.
