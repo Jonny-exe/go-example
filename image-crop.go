@@ -38,7 +38,11 @@ const imagePath = "/home/a/Documents/GitHub/go-example/image-600x600.png"
 const imageTmpDir = ""              // OS default, e.g. /tmp
 const imageTmpPattern = "crop-tmp-" // start of temp file
 const x0 = 50                       // sample coordinates
+<<<<<<< HEAD
 const y0 = 50                       // sample coordinates
+=======
+const y0 = 50
+>>>>>>> 93e1956fcc5fe6b3f5e95a0d737a75f77e19b7fd
 const x1 = 550
 const y1 = 550
 
